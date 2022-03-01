@@ -41,6 +41,17 @@
             {{- end }}
           {{- end }}
         </ul>
+        {{- $disableShortcutsTitle := .Site.Params.DisableShortcutsTitle }}
+        {{- with .Site.Menus.shortcuts }}
+        <div id="shortcuts">
+          <div class="nav-title">{{ if not $disableShortcutsTitle }}{{ T "Shortcuts-Title" }}{{ end }}</div>
+          <ul>
+            {{- range sort . "Weight" }}
+            <li>{{ .Pre }}<a class="padding" href="{{ .URL | relLangURL }}">{{ safeHTML .Name }}</a>{{ .Post }}</li>
+            {{- end }}
+          </ul>
+        </div>
+        {{- end }}
         {{- $siteLanguages := .Site.Languages }}
         {{- $showlangswitch := and .Site.IsMultiLingual (not .Site.Params.disableLanguageSwitchingButton) (gt (int (len $siteLanguages)) 1) }}
         {{- $themevariants := slice | append (.Site.Params.themeVariant | default "relearn-light" ) }}

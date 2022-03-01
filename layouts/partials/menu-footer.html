@@ -1,2 +1,14 @@
 
-	    <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p>
+	    <!-- <p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p> -->
+		
+		{{- $disableShortcutsTitle := .Site.Params.DisableShortcutsTitle }}
+        {{- with .Site.Menus.shortcuts }}
+        <div id="shortcuts">
+          <div class="nav-title">{{ if not $disableShortcutsTitle }}{{ T "Shortcuts-Title" }}{{ end }}</div>
+          <ul>
+            {{- range sort . "Weight" }}
+            <li>{{ .Pre }}<a class="padding" href="{{ .URL | relLangURL }}">{{ safeHTML .Name }}</a>{{ .Post }}</li>
+            {{- end }}
+          </ul>
+        </div>
+        {{- end }}

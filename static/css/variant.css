@@ -95,10 +95,11 @@ a:hover,
 }
 
 #header-wrapper {
-    background-color: var(--INTERNAL-MENU-HEADER-BG-color);
+    background-color: var(--INTERNAL-MENU-SECTIONS-BG-color);
     border-color: var(--INTERNAL-MENU-HEADER-BORDER-color);
     color: var(--INTERNAL-MENU-SEARCH-color);
 }
+
 
 .searchbox {
     border-color: var(--INTERNAL-MENU-SEARCH-BORDER-color);

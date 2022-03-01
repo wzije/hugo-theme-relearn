@@ -314,7 +314,7 @@ th {
 
 #sidebar .nav-title {
     color: #ffffff; /* var(--MENU-SECTIONS-LINK-HOVER-color) */
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 200;
     letter-spacing: -1px;
     line-height: 110% !important;
